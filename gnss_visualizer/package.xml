@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>gnss_localizer</name>
+  <name>gnss_visualizer</name>
   <version>0.0.0</version>
-  <description>The gnss_localizer package</description>
+  <description>The gnss_visualizer package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

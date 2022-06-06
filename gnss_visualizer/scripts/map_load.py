@@ -8,10 +8,14 @@ from sensor_msgs.msg import NavSatFix
 
 if __name__=="__main__":
 
-    ref_point = [49.01779795478,8.4411710247314,115.01278686523] # 41.653012 123.422713 0.0
+    # rospy.INFO("Load Map")
 
+    rospy.init_node('map_load', anonymous=True)
+    ref_point = [] # 41.653012 123.422713 0.0
 
-    rospy.init_node('path_client', anonymous=True)
+    ref_point.append(rospy.get_param("/map_load/ori_lat"))
+    ref_point.append(rospy.get_param("/map_load/ori_lon"))
+    ref_point.append(rospy.get_param("/map_load/ori_alt"))
     
     #等待需要是要的服务
     rospy.loginfo("Waiting Service : /path_get_service");

@@ -8,6 +8,9 @@
   <arg name="ori_alt" default="115.01278686523"/>
 
   <node name="map_load" pkg="gnss_localizer" type="map_load.py" output="screen">
+    <param name="/ori_lat" value="$(arg ori_lat)"/>
+    <param name="/ori_lon" value="$(arg ori_lon)"/>
+    <param name="/ori_alt" value="$(arg ori_alt)"/>
   </node>
 
   <node pkg="gnss_localizer" type="gnss_localizer" name="gnss_localizer" output="screen">
