@@ -1,0 +1,27 @@
+<!-- http://a.tiles.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.jpg?access_token=pk.eyJ1IjoidGgzY29yeWQiLCJhIjoiY2l5MjNramozMDAxYTMybnR4Y296NmZ6bCJ9.Qx4UJrlAlu5kK1GvrCvmig -->
+<launch>
+
+  <arg name="save_origin" default="false"/>
+  <arg name="load_origin" default="true"/>
+  <arg name="ori_lat" default="49.01779795478"/>
+  <arg name="ori_lon" default="8.4411710247314"/>
+  <arg name="ori_alt" default="115.01278686523"/>
+
+  <node name="map_load" pkg="gnss_localizer" type="map_load.py" output="screen">
+  </node>
+
+  <node pkg="gnss_localizer" type="gnss_localizer" name="gnss_localizer" output="screen">
+    <param name="save_origin" value="$(arg save_origin)"/>
+    <param name="load_origin" value="$(arg load_origin)"/>
+    <param name="ori_lat" value="$(arg ori_lat)"/>
+    <param name="ori_lon" value="$(arg ori_lon)"/>
+    <param name="ori_alt" value="$(arg ori_alt)"/>
+
+    <remap from="fix" to="/kitti360_gps"/>
+  </node>
+
+  <node pkg="rviz" type="rviz" name="rviz" output="screen" 
+    args="-d $(find gnss_localizer)/launch/rviz.rviz" required="true">
+  </node>
+
+</launch>
