@@ -27,11 +27,12 @@ catkin_make
 ## Other notes
 
 1. adjust the topic
-change the topic ```/fix``` to your gnss topic,or use ```remap```
+
+    use ```remap``` to change the topic ```/fix``` to your gnss topic,
 
 2. check the ```NavSatFix``` status in ```GNSSCallback```
 
-3. before run your bag(contain gps topic), you need change  ```ori_lat,ori_lon,ori_alt``` in```run.launch```.
+3. before run your bag(contain gps topic), you need change  ```ori_lat,ori_lon,ori_alt``` in```run.launch``` at `map_load` node.
 
 4. reopen the ```run.launch``` and replay your bag.
 
