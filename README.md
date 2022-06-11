@@ -18,9 +18,7 @@ A simple GNSS positioning and display demo
 Use the following commands to download and compile the package.
 
 ```
-cd ~/catkin_ws/src
 git clone https://github.com/zhuhu00/gnss_visualizer.git
-cd ..
 catkin_make
 ```
 
